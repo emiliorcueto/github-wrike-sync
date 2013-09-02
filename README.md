@@ -16,7 +16,7 @@ Sync Github Issues && Milestones with Wrike Tasks and Folders using Github Servi
     "issue_comment"
   ],
   "config": {
-    "url": "<Replace This With Your URL>",
+    "url": "Replace This With Your URL",
     "content_type": "json"
   }
 }
