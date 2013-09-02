@@ -31,27 +31,27 @@ along with github-wrike-sync.  If not, see <http://www.gnu.org/licenses/>.
  */
 	 
 class LN_WRIKE {
-    
-    protected $secret 				= '';
-	protected $consumer 			= '';
-    protected $access_token 		= '';
-    protected $access_token_secret 	= '';
-    
-    // set user's github id as key / wrike id as value
-    // this allows us to set responsible users for wrike tasks
-    // check out: http://caius.github.io/github_id/
-    protected $github_user_ids = array(
-    				'Dev #1 Github ID'	=> 'Dev #1 Wrike ID',	//User 1
-    				'Dev #2 Github ID'	=> 'Dev #2 Wrike ID',	//User 2, etc..
-    			);
 
-    public function __construct($secret, $consumer, $token, $token_secret){
-        $this->secret 				= $secret;
-        $this->consumer 			= $consumer;
-        $this->access_token 		= $token;
-        $this->access_token_secret 	= $token_secret;
-    }
-    	
+	protected $secret 				= '';
+	protected $consumer 			= '';
+	protected $access_token 		= '';
+	protected $access_token_secret 	= '';
+
+	// set user's github id as key / wrike id as value
+	// this allows us to set responsible users for wrike tasks
+	// check out: http://caius.github.io/github_id/
+	protected $github_user_ids = array(
+					'Dev #1 Github ID'	=> 'Dev #1 Wrike ID',	//User 1
+					'Dev #2 Github ID'	=> 'Dev #2 Wrike ID',	//User 2, etc..
+				);
+
+	public function __construct($secret, $consumer, $token, $token_secret){
+		$this->secret 				= $secret;
+		$this->consumer 			= $consumer;
+		$this->access_token 		= $token;
+		$this->access_token_secret 	= $token_secret;
+	}
+
 	private function urlencode_rfc3986($string) {
 		return str_replace("%7E", "~", rawurlencode($string));
 	}

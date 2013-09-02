@@ -30,7 +30,7 @@ if ( !empty($request) ) {
 	$consumer 		= 'Wrike oAuth Key';
 	$token			= 'Wrike Access Token';
 	$token_secret	= 'Wrike Access Token Secret';
-	$wrike 			= new LN_WRIKE($secret, $consumer, $token, $token_secret);
+	$wrike			= new LN_WRIKE($secret, $consumer, $token, $token_secret);
 	
 	$response = $wrike->github_sync($payload);
 }
