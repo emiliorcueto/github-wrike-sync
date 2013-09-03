@@ -3,6 +3,12 @@ github-wrike-sync
 
 Sync Github Issues && Milestones with Wrike Tasks and Folders using Github Service Hooks
 
+With this script you can automatically add/update wrike tasks and folders without ever leaving github.  
+Updating an issue or milestone in github will automatically update the task or folder in your linked wrike account.
+
+
+Setup
+=====
 
 - Clone this repo to your webserver.  Make sure it is accessible to the ourside world.
 
@@ -36,7 +42,7 @@ Caveats
 
 - Wrike does not currently support custom ID's when adding/updating/deleting via their API.  This makes it troublesome to accurately update existing tasks which have been previously synced.  Currently this script matches by Wrike title, but the real solution would be to store Wrike IDs in a local DB and match accordingly.  For now, if you do not edit any titles of you issues / milestones (tasks/folders) then you should be fine.  However keep in mind that the more your task list grows, the more performance will degrade.  Hopefully the fine fellows at Wrike will include a custom ID parameter which is indexed on their side in their upcoming v3 release of their API (fingers crossed).  In my opinion, it would only help them grow exponentially since it would make it that much easier for other users to integrate with Wrike!
 
-- Currently all synced tasks are shared (not assigned) with all users in your Wrike account.  This may not be beneficial for some however for our small team it works just fine.  Users that were assigned an issue in Github will still be the responsibleUser in Wrike, but anyone else on the account can view it.
+- Currently all synced tasks are shared (not assigned) with all users in your Wrike account.  This may not be beneficial for some however for our small team it works just fine.  Users that were assigned an issue in Github will still be the responsibleUser in Wrike, but anyone else on the account can view it.  This will be fixed in a future release.
 
 
 
