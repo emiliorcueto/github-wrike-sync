@@ -14,6 +14,7 @@ Setup
 
 - Github service hooks only trigger upon pushes by default.  In order to set up triggers for issues you must send a post request to: https://api.github.com/repos/:owner/:repo/hooks with the following json payload:
 
+```json
 {
   "name": "web",
   "active": true,
@@ -26,8 +27,9 @@ Setup
     "content_type": "json"
   }
 }
+```
 
-- In Github, go to "Settings" -> "Service Sooks" -> "WebHook URLs" and enter your publicly accessible URL.  Click Update.
+- In Github, go to your repo's Settings page -> "Webhooks & Services" -> "Webhooks" and click "Add Webhook". Enter your publicly accessible URL, then click Update.
 
 - You should now be able to parse github issue / issue comment hooks. (create a test issue and check your logs)
 
